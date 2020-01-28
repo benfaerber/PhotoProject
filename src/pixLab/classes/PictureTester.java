@@ -62,7 +62,7 @@ public class PictureTester
   /** Method to test mirrorVertical */
   public static void testMirrorVertical()
   {
-    Picture mark = new Picture("blue-mark.jpg");
+    Picture mark = new Picture("caterpillar.jpg");
     mark.explore();
     mark.mirrorVertical();
     mark.explore();
@@ -143,7 +143,7 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    //testMirrorVertical(); // Complete
+    testMirrorVertical(); // Complete
     //testMirrorVerticalRightToLeft(); // Complete
     //testMirrorTemple(); // Complete
     //testMirrorHorizontal(); // Complete

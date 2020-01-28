@@ -220,6 +220,7 @@ public class Picture extends SimplePicture
   
   public void mirrorArm()
   {
+	  /*
 	  Pixel[][] pixels = this.getPixels2D();
 	  
 	  int beginArmRow = 159;
@@ -227,7 +228,7 @@ public class Picture extends SimplePicture
 	  int endArmRow = 192;
 	  int endArmCol = 172;
 	  
-	  Pixel[][] arm = new Pixel[][];
+	  Pixel[][] arm = new Pixel[endArmRow-beginArmRow][endArmCol-beginArmCol];
 	  Pixel leftPixel = null;
 	  Pixel rightPixel = null;
 	  for (int row = 159; row < 192; row++)
@@ -238,6 +239,7 @@ public class Picture extends SimplePicture
 			  rightPixel = pixels
 		  }
 	  }
+	  */
   }
   
   /** copy from the passed fromPic to the
