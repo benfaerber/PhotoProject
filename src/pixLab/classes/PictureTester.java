@@ -88,7 +88,7 @@ public class PictureTester
   {
 	  Picture snowman = new Picture("snowman.jpg");
 	  snowman.explore();
-	  //snowman.mirrorArms();
+	  snowman.mirrorArm();
 	  snowman.explore();
   }
   
@@ -143,12 +143,12 @@ public class PictureTester
     //testNegate();
     //testGrayscale();
     //testFixUnderwater();
-    testMirrorVertical(); // Complete
+    //testMirrorVertical(); // Complete
     //testMirrorVerticalRightToLeft(); // Complete
     //testMirrorTemple(); // Complete
     //testMirrorHorizontal(); // Complete
     testMirrorArms();
-    testMirrorGull();
+    //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
