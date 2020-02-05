@@ -1,4 +1,7 @@
 package pixLab.classes;
+
+import java.awt.Color;
+
 /**
  * This class contains class (static) methods
  * that will help you test the Picture class 
@@ -30,7 +33,7 @@ public class PictureTester
   {
     Picture beach = new Picture("beach.jpg");
     beach.explore();
-    beach.zeroGreen();
+    beach.zeroGreen(50, 50, 100, 100);
     beach.explore();
   }
   
@@ -96,7 +99,7 @@ public class PictureTester
   {
 	  Picture gull = new Picture("seagull.jpg");
 	  gull.explore();
-	  //gull.mirrorGull();
+	  gull.mirrorGull();
 	  gull.explore();
   }
   
@@ -124,6 +127,52 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testGlitch()
+  {
+	  Picture arch = new Picture("arch.jpg");
+	  arch.explore();
+	  arch.glitch();
+	  arch.explore();
+  }
+  
+  public static void testNegate()
+  {
+	  Picture arch = new Picture("arch.jpg");
+	  arch.explore();
+	  arch.negate();
+	  arch.explore();
+  }
+  public static void testGrayscale()
+  {
+	  Picture arch = new Picture("arch.jpg");
+	  arch.explore();
+	  arch.depression();
+	  arch.explore();
+  }
+  public static void testFixUnderwater()
+  {
+	  Picture water = new Picture("water.jpg");
+	  water.explore();
+	  water.fixUnderwater();
+	  water.explore();
+  }
+  
+  public static void testChromakey()
+  {
+	  Picture source = new Picture("hotties.jpg");
+	  Picture background = new Picture("background.jpg");
+	  Color replaceColor = new Color(0, 255, 0);
+	  source.explore();
+	  source.chromakey(background, replaceColor);
+	  source.depression();
+	  source.addText("Me and Kevin checking our potatos (Ireland 1847)", 150, 75, 32);
+	  source.addText("How they lookin' Ben?", 358, 189, 20);
+	  source.addText("Blimey, Kev' they're black and moldy!", 676, 420, 20);
+	  source.explore();
+	  System.out.println(source.write("/Users/wfae1302/Desktop/irelandMeme.jpg"));
+  }
+  
+  
   /** Main method for testing.  Every class can have a main
     * method in Java */
   public static void main(String[] args)
@@ -136,25 +185,28 @@ public class PictureTester
 	// uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
+	//testGlitch();
     //testZeroGreen(); // Complete
     //testKeepOnlyBlue(); // Complete
     //testKeepOnlyRed(); // Complete
+	//testZeroGreen();
+	  
     //testKeepOnlyGreen(); // Complete
-    //testNegate();
-    //testGrayscale();
-    //testFixUnderwater();
+    //testNegate(); // Complete
+    //testGrayscale(); // Complete
+    //testFixUnderwater(); // Complete
     //testMirrorVertical(); // Complete
     //testMirrorVerticalRightToLeft(); // Complete
     //testMirrorTemple(); // Complete
     //testMirrorHorizontal(); // Complete
-    testMirrorArms();
-    //testMirrorGull();
+    //testMirrorArms(); // Complete
+    //testMirrorGull(); // Complete
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
-    //testChromakey();
+	  testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
