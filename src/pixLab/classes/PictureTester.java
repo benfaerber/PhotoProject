@@ -128,6 +128,13 @@ public class PictureTester
     swan.explore();
   }
   
+  public static void testEdgeDetection2()
+  {
+	  Picture swan = new Picture("swan.jpg");
+	  swan.edgeDetection(10);
+	  swan.explore();
+  }
+  
   public static void testGlitch()
   {
 	  Picture arch = new Picture("arch.jpg");
@@ -192,7 +199,7 @@ public class PictureTester
 	// uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-	testGlitch();
+	//testGlitch();
     //testZeroGreen(); // Complete
     //testKeepOnlyBlue(); // Complete
     //testKeepOnlyRed(); // Complete
@@ -211,8 +218,8 @@ public class PictureTester
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
-    //testEdgeDetection2();
+    testEdgeDetection();
+    testEdgeDetection2();
 	//testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
