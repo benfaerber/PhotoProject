@@ -409,6 +409,38 @@ public class Picture extends SimplePicture
 		  pix.setBlue(pix.getBlue()/val);
   }
   
+  public Pixel[][] oldRemoveChannelChunk(Pixel[][] input)
+  {
+	  for (int row = 0; row < input.length; row++)
+	  {
+		  for (int col = 0; col < input[0].length; col++)
+		  {
+			  if (chance(500))
+			  {
+				  int val = random(1, 10);
+
+				  int chunkSizeX = random(10, 60);
+				  int chunkSizeY = random(10, 60);
+				  for (int i = 0; i < chunkSizeY; i++)
+				  {
+					  int span = chunkSizeX;
+					  if (chance(5))
+						  span = random(10,60);
+					  for (int j = 0; j < span; j++)
+					  {
+						  if (row+i < input.length && col+j < input[0].length)
+						  {
+							  Pixel currentPixel = input[row+i][col+j];
+							  removePixelColor(currentPixel, random(3), val);
+						  }
+					  }
+				  }
+			  }
+		  }
+	  }
+	  return input;
+  }
+  
   public Pixel[][] removeChannelChunk(Pixel[][] input)
   {
 	  int scalar = 10;
@@ -465,6 +497,36 @@ public class Picture extends SimplePicture
 		  }
 	  }
 	  return input;
+  }
+  
+  public void oldGlitch()
+  {
+	  Pixel[][] pixels = this.getPixels2D();
+	  int randomRow = random(pixels.length);
+	  int randomCol = random(pixels[0].length);
+	  
+	  int startRow = random(randomRow);
+	  int startCol = random(randomCol);
+	  
+	  for (int row = 0; row < pixels.length; row++)
+	  {
+		  for (int col = 0; col < pixels[0].length; col++)
+		  {
+			  Pixel currentPixel = pixels[row][col];
+			  Color pixelColor = currentPixel.getColor();
+			  int offset = random(0, 200);
+			  int red = constrainColor(pixelColor.getRed() + random(-offset, offset));
+			  int green = constrainColor(pixelColor.getGreen() + random(-offset, offset));
+			  int blue = constrainColor(pixelColor.getBlue() + random(-offset, offset));
+			  
+			  
+			  Color randomColor = new Color(red, green, blue);
+			  
+			  currentPixel.setColor(randomColor);
+		  }
+	  }
+	  
+	  pixels = oldRemoveChannelChunk(pixels);
   }
   
   public void glitch()

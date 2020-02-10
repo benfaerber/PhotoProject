@@ -101,6 +101,7 @@ public class PictureTester
 	  gull.explore();
 	  gull.mirrorGull();
 	  gull.explore();
+	  gull.write("/Users/wfae1302/Desktop/gull.jpg");
   }
   
   public static void testMirrorHorizontal()
@@ -131,6 +132,11 @@ public class PictureTester
   {
 	  Picture arch = new Picture("arch.jpg");
 	  arch.explore();
+	  arch.oldGlitch();
+	  arch.explore();
+	  
+	  arch = new Picture("arch.jpg");
+	  arch.explore();
 	  arch.glitch();
 	  arch.explore();
   }
@@ -155,6 +161,7 @@ public class PictureTester
 	  water.explore();
 	  water.fixUnderwater();
 	  water.explore();
+	  water.write("/Users/wfae1302/Desktop/water.jpg");
   }
   
   public static void testChromakey()
@@ -185,7 +192,7 @@ public class PictureTester
 	// uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-	//testGlitch();
+	testGlitch();
     //testZeroGreen(); // Complete
     //testKeepOnlyBlue(); // Complete
     //testKeepOnlyRed(); // Complete
@@ -206,7 +213,7 @@ public class PictureTester
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();
-	  testChromakey();
+	//testChromakey();
     //testEncodeAndDecode();
     //testGetCountRedOverValue(250);
     //testSetRedToHalfValueInTopHalf();
